@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta name="robots" content="noindex" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习机软件下载</title>
+    <style>
+        body {
+          font-family : Arial, sans-serif;
+          background-color : #F0F0F0;
+          margin : 0;
+          padding : 0;
+        }
+
+        #container {
+          width : 90%;
+          margin : 20px auto;
+        }
+
+        #searchContainer {
+          display : flex;
+          align-items : center;
+        }
+
+        #searchInput {
+          border : 1px solid #CCCCCC;
+          border-radius : 4px;
+          padding : 6px 12px;
+          font-size : 14px;
+          transition : border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+          margin-right : 5px;
+        }
+
+        #searchInput:focus {
+          border-color : #66AFE9;
+          outline : 0;
+          box-shadow : 0 0 5px rgba(102, 175, 233, .5);
+        }
+
+        #clearBtn {
+          background-color : #DD1204;
+          border : none;
+          color : white;
+          padding : 4px 12px;
+          text-align : center;
+          text-decoration : none;
+          display : inline-block;
+          font-size : 14px;
+          margin : 4px 2px;
+          cursor : pointer;
+          border-radius : 4px;
+        }
+
+        #resetBtn {
+          background-color : #0066ff;
+          border : none;
+          color : white;
+          padding : 4px 12px;
+          text-align : center;
+          text-decoration : none;
+          display : inline-block;
+          font-size : 14px;
+          margin : 4px 2px;
+          cursor : pointer;
+          border-radius : 4px;
+        }
+
+        table {
+          width : 100%;
+          margin-top : 10px;
+          border-collapse : collapse;
+          background-color : #FFFFFF;
+          box-shadow : 0 0 10px rgba(0, 0, 0, .1);
+        }
+
+        th, td {
+          padding : 5px;
+          vertical-align:text-bottom;
+          text-align : center;
+          border-bottom : 1px solid #DDDDDD;
+        }
+
+        th {
+          background-color : #F2F2F2;
+          font-weight : bold;
+          color : #333333;
+        }
+
+        tr:hover {
+          background-color : #F5F5F5;
+        }
+
+        .download-btn {
+          background-color : #4CAF50;
+          border : none;
+          color : white;
+          text-align : center;
+          text-decoration : none;
+          display : inline-block;
+          font-size : 12px;
+          margin : 4px 2px;
+          cursor : pointer;
+          border-radius : 4px;
+        }
+
+        .download-btn2 {
+          background-color : #4F574F;
+        }
+
+        th:first-child {
+          width : 35px;
+        }
+
+        .download-th {
+          width : 50px;
+        }
+
+        td:first-child {
+          color : #0485FF;
+          font-weight : bold;
+        }
+
+        th:nth-child(2), td:nth-child(2) {
+          text-align : left;
+        }
+
+        td:nth-child(2) {
+          color : #6C1313;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+      <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="搜索序号或软件名称" clearable>
+        <button id="clearBtn">清空</button>
+        <button id="resetBtn">装机必备</button>
+      </div>
+      <table id="softwareTable">
+          <thead>
+              <tr>
+                  <th>序号</th>
+                  <th>软件名称</th>
+                  <th class="download-th">下载</th>
+              </tr>
+          </thead>
+          <tbody></tbody>
+      </table>
+    </div>
+</body>
+<script>
+  var softwareList = [
+      {name: '别删【AI同步课堂】'},
+      {name: '远程控制'},
+      {name: '远程控制。贝壳'},
+      {name: '东方远程控制'},
+      {name: '谷歌拼音 4.1.1.93780058'},
+      {name: '智慧幼教_3.0.0'},
+      {name: '下载中心4.0'},
+      {name: '作业帮'},
+      {name: '作业帮手机正版'},
+      {name: '应用汇'},
+      {name: '就30幼儿播放器'},
+      {name: '别删【新AI学习平台】'},
+      {name: '别删【新AR学习系统】'},
+      {name: '别删【学习平台】'},
+      {name: '别删【东方学习平板】'},
+      {name: '别删【学生平板】'},
+      {name: '微信'},
+      {name: '酷我音乐'},
+      {name: '猫小帅学数字'},
+      {name: '快手_4.53.1.100099'},
+      {name: '就30的学王指读'},
+      {name: '就30的同步学习'},
+      {name: '就30的名师课堂'},
+      {name: '画画'},
+      {name: '好课帮'},
+      {name: '优酷IoT版_10.1.1.65'},
+      {name: '学生平板的同步点读'},
+      {name: '新AR影视厅'},
+      {name: '新AR实验室播放器'},
+      {name: '新AI影视厅'},
+      {name: '新AI实验室播放器'},
+      {name: '腾讯视频_2.0.0.1299'},
+      {name: '东方智能护眼'},
+      {name: '东方实验室播放器'},
+      {name: '爱奇艺语音控制版本'},
+      {name: '爱奇艺HD_7.4'},
+      {name: '讯飞'},
+      {name: 'via浏览器'},
+      {name: 'jxwgb_game'},
+      {name: '儿童英语'},
+      {name: '儿童画画_1.04'},
+      {name: '儿歌多多_3.9.4.0'},
+      {name: '豆博士学汉字'},
+      {name: '抖音短视频_9.9.1504'},
+      {name: '唐诗三百首'},
+      {name: '神庙逃亡2'},
+  ];
+  var tableBody = document.querySelector('#softwareTable tbody');
+  for (var i = 0; i < softwareList.length; i++) {
+    var item = softwareList[i];
+    var tr = document.createElement('tr');
+    var tdIndex = document.createElement('td');
+    var index = i + 1;
+    tdIndex.textContent = index;
+    var tdName = document.createElement('td');
+    tdName.textContent = item.name;
+    //高速通道
+    var tdDownload = document.createElement('td');
+    var downloadBtn = document.createElement('button');
+    downloadBtn.className = 'download-btn';
+    downloadBtn.textContent = '下载';
+    downloadBtn.dataset.name = item.name;
+    downloadBtn.onclick = function(){
+      download_apk('/apk/'+this.dataset.name+'.apk');
+    }
+    tdDownload.appendChild(downloadBtn);
+
+    tr.appendChild(tdIndex);
+    tr.appendChild(tdName);
+    tr.appendChild(tdDownload);
+    tableBody.appendChild(tr);
+  }
+
+  //apk下载
+  function download_apk(href, blank=false){
+    var downloadLink = document.createElement('a');
+    downloadLink.href = href;
+    if(blank){
+      downloadLink.target = '_blank';
+    }
+    downloadLink.rel = 'noreferrer';
+    downloadLink.click();
+  }
+
+  //清空按钮
+  document.getElementById('clearBtn').addEventListener('click', function() {
+    clearSearch();
+  });
+
+  //input实时搜索
+  document.getElementById('searchInput').addEventListener('input', function() {
+    search();
+  });
+
+  //回车搜索
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      search();
+    }
+  });
+
+  //装机必备按钮
+  document.getElementById('resetBtn').addEventListener('click', function() {
+    clearSearch();
+    var dataIndexes = ['1','2','5','7','8','11','18','25','36'];
+    var tableRows = document.querySelectorAll('#softwareTable tbody tr');
+    for (var i = 0; i < tableRows.length; i++) {
+      //序号
+      var indexRowData = tableRows[i].cells[0].textContent.toLowerCase();
+      if (dataIndexes.includes(indexRowData)) {
+        tableRows[i].style.display = '';
+      }else{
+        tableRows[i].style.display = 'none';
+      }
+    }
+  });
+
+  //清空
+  function clearSearch(){
+    document.getElementById('searchInput').value = '';
+    search();
+  }
+
+  //搜索
+  function search(){
+    const regex = /^-?\d+$/;
+    var searchInput = document.getElementById('searchInput').value.toLowerCase();
+    var isInt = regex.test(searchInput);
+    var bool = false;
+    var tableRows = document.querySelectorAll('#softwareTable tbody tr');
+    for (var i = 0; i < tableRows.length; i++) {
+      //序号
+      if(isInt){
+        var indexRowData = tableRows[i].cells[0].textContent.toLowerCase();
+        bool = indexRowData == searchInput;
+      }else{
+        var nameRowData = tableRows[i].cells[1].textContent.toLowerCase();
+        bool = nameRowData.indexOf(searchInput) > -1
+      }
+      if (bool) {
+        tableRows[i].style.display = '';
+      } else {
+        tableRows[i].style.display = 'none';
+      }
+    }
+  }
+</script>
+</html>
