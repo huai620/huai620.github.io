@@ -145,7 +145,8 @@
               <tr>
                   <th>序号</th>
                   <th>软件名称</th>
-                  <th class="download-th">下载</th>
+                  <th class="download-th">高速</th>
+                  <th class="download-th">备用</th>
               </tr>
           </thead>
           <tbody></tbody>
@@ -154,52 +155,52 @@
 </body>
 <script>
   var softwareList = [
-      {name: '别删【AI同步课堂】'},
-      {name: '远程控制'},
-      {name: '远程控制。贝壳'},
-      {name: '东方远程控制'},
-      {name: '谷歌拼音 4.1.1.93780058'},
-      {name: '智慧幼教_3.0.0'},
-      {name: '下载中心4.0'},
-      {name: '作业帮'},
-      {name: '作业帮手机正版'},
-      {name: '应用汇'},
-      {name: '就30幼儿播放器'},
-      {name: '别删【新AI学习平台】'},
-      {name: '别删【新AR学习系统】'},
-      {name: '别删【学习平台】'},
-      {name: '别删【东方学习平板】'},
-      {name: '别删【学生平板】'},
-      {name: '微信'},
-      {name: '酷我音乐'},
-      {name: '猫小帅学数字'},
-      {name: '快手_4.53.1.100099'},
-      {name: '就30的学王指读'},
-      {name: '就30的同步学习'},
-      {name: '就30的名师课堂'},
-      {name: '画画'},
-      {name: '好课帮'},
-      {name: '优酷IoT版_10.1.1.65'},
-      {name: '学生平板的同步点读'},
-      {name: '新AR影视厅'},
-      {name: '新AR实验室播放器'},
-      {name: '新AI影视厅'},
-      {name: '新AI实验室播放器'},
-      {name: '腾讯视频_2.0.0.1299'},
-      {name: '东方智能护眼'},
-      {name: '东方实验室播放器'},
-      {name: '爱奇艺语音控制版本'},
-      {name: '爱奇艺HD_7.4'},
-      {name: '讯飞'},
-      {name: 'via浏览器'},
-      {name: 'jxwgb_game'},
-      {name: '儿童英语'},
-      {name: '儿童画画_1.04'},
-      {name: '儿歌多多_3.9.4.0'},
-      {name: '豆博士学汉字'},
-      {name: '抖音短视频_9.9.1504'},
-      {name: '唐诗三百首'},
-      {name: '神庙逃亡2'},
+      {name: '别删【AI同步课堂】',id: 'ibRjS1xjffyd', pwd:'4g8m', key:'eu3fh'},
+      {name: '远程控制',id: 'innH51xjgiud', pwd:'cah2', key:'6u3fh'},
+      {name: '远程控制。贝壳',id: 'iZFsd1xjgepe', pwd:'ddbz',key:'qu3fh'},
+      {name: '东方远程控制',id: 'iN8KC1y84uud', pwd:'2ppg', key:'Uu3fh'},
+      {name: '谷歌拼音 4.1.1.93780058',id: 'i0QyO1xjg18j', pwd:'ebbz',key:'pU3fh'},
+      {name: '智慧幼教_3.0.0',id: 'ia7nM1xjgfxi', pwd:'ezny',key:'5u3fh'},
+      {name: '下载中心4.0',id: 'i2I8G1xjfvaf', pwd:'8797',key:'hU3fh'},
+      {name: '作业帮',id: 'iexZx1xjgijc', pwd:'41o3',key:'Lu3fh'},
+      {name: '作业帮手机正版',id: '', pwd:'',key:'PK3fh'},
+      {name: '应用汇',id: 'iuUza1xjg0gb', pwd:'axyg',key:'Vu3fh'},
+      {name: '就30幼儿播放器',id: 'ieEvq1xjgalg', pwd:'2ukx',key:'kU3fh'},
+      {name: '别删【新AI学习平台】',id: 'ilstq1xjfghc', pwd:'hfoh',key:'cu3fh'},
+      {name: '别删【新AR学习系统】',id: 'iwBQJ1xki1dc', pwd:'6fqo',key:'Zu3fh'},
+      {name: '别删【学习平台】',id: 'iKH421xjfgoj', pwd:'g94y',key:'7u3fh'},
+      {name: '别删【东方学习平板】',id: 'iyhr51xki6yd', pwd:'b7x4',key:'JU3fh'},
+      {name: '别删【学生平板】',id: 'iKtfS1yebf3e', pwd:'2udn',key:'bu3fh'},
+      {name: '微信',id:'',pwd:'',key:'G03fh'},
+      {name: '酷我音乐',id: 'iR6qp1y00w9c', pwd:'3onr',key:'Ru3fh'},
+      {name: '猫小帅学数字',id: 'imxaU1xjgd7a', pwd:'ambo',key:'QU3fh'},
+      {name: '快手_4.53.1.100099',id: 'iSBtw1xjgb4f', pwd:'6a8a',key:'EU3fh'},
+      {name: '就30的学王指读',id: 'iNlPG1xjga7c', pwd:'9fd7',key:'oU3fh'},
+      {name: '就30的同步学习',id: 'iSYya1xjg7na', pwd:'2n4r',key:'mU3fh'},
+      {name: '就30的名师课堂',id: 'i8Nz81xjg68j', pwd:'gbq2',key:'1U3fh'},
+      {name: '画画',id: 'i1dm31xjg60b', pwd:'fsz8',key:'4U3fh'},
+      {name: '好课帮',id: 'i9pma1xjg45e', pwd:'cmpm',key:'xU3fh'},
+      {name: '优酷IoT版_10.1.1.65',id: 'iiKXu1xjg0yj', pwd:'aidf',key:'yu3fh'},
+      {name: '学生平板的同步点读',id: 'iFgir1xjg06b', pwd:'4q1n',key:'ju3fh'},
+      {name: '新AR影视厅',id: 'iMjbO1xjfwub', pwd:'eigq',key:'TU3fh'},
+      {name: '新AR实验室播放器',id: 'ikP7T1xjfvyj', pwd:'8ebv',key:'vU3fh'},
+      {name: '新AI影视厅',id: 'iUmK21xjfvrc', pwd:'aepw',key:'dU3fh'},
+      {name: '新AI实验室播放器',id: 'iDfpH1xjfvbg', pwd:'appe',key:'3U3fh'},
+      {name: '腾讯视频_2.0.0.1299',id: 'i54nm1xjfv5a', pwd:'eny8',key:'HU3fh'},
+      {name: '东方智能护眼',id: 'ibX5M1xjfgsd', pwd:'86gr',key:'uu3fh'},
+      {name: '东方实验室播放器',id: 'ipbXt1xjfgpa', pwd:'5whi',key:'lu3fh'},
+      {name: '爱奇艺语音控制版本',id: 'iPb5h1xjfejc', pwd:'ea8u',key:'tu3fh'},
+      {name: '爱奇艺HD_7.4',id: 'iLAYx1xjfdsf', pwd:'bstv',key:'iu3fh'},
+      {name: '讯飞',id: 'iGNoh1y00wqj', pwd:'38ue',key:'Ou3fh'},
+      {name: 'via浏览器',id: 'iiBhp1xjfc2d', pwd:'5phx',key:''},
+      {name: 'jxwgb_game',id: 'igcda1xjfc1c', pwd:'eht2',key:'zu3fh'},
+      {name: '儿童英语',id: 'iiKcj1xjfanc', pwd:'93j6',key:'Du3fh'},
+      {name: '儿童画画_1.04',id: 'iORCa1xjf80h', pwd:'68hc',key:'ru3fh'},
+      {name: '儿歌多多_3.9.4.0',id: 'iruLN1xjf7ne', pwd:'50xt',key:'8u3fh'},
+      {name: '豆博士学汉字',id: 'immYt1xjf6xi', pwd:'aag2',key:'0u3fh'},
+      {name: '抖音短视频_9.9.1504',id: 'i1UfK1xjf5pe', pwd:'5cba',key:'Ku3fh'},
+      {name: '唐诗三百首',id: 'iKukB1y9o8kh', pwd:'a5rp',key:'AU3fh'},
+      {name: '神庙逃亡2',id: 'iWCbd1y9o7of', pwd:'g1aw',key:'9U3fh'},
   ];
   var tableBody = document.querySelector('#softwareTable tbody');
   for (var i = 0; i < softwareList.length; i++) {
@@ -210,21 +211,79 @@
     tdIndex.textContent = index;
     var tdName = document.createElement('td');
     tdName.textContent = item.name;
-    //下载
+    //高速通道
     var tdDownload = document.createElement('td');
     var downloadBtn = document.createElement('button');
     downloadBtn.className = 'download-btn';
     downloadBtn.textContent = '下载';
-    downloadBtn.dataset.name = item.name;
+    downloadBtn.dataset.index = index;
+    downloadBtn.dataset.id = item.id;
+    downloadBtn.dataset.pwd = item.pwd;
+    downloadBtn.dataset.key = item.key;
     downloadBtn.onclick = function(){
-      download_apk('/apk/'+this.dataset.name+'.apk');
+      if(this.dataset.id != ''){
+        ajax_download('lanzouyun.php?id=' + this.dataset.id + '&pwd=' + this.dataset.pwd);
+      }else if(this.dataset.key != ''){
+        var url = "https://www.123pan.com/s/zbPhTd-"+this.dataset.key+".html";
+        ajax_download('123yun.php?url=' + url);
+      }else{
+        alert('下载出错！');
+      }
     }
     tdDownload.appendChild(downloadBtn);
+
+    //备用通道
+    var tdDownload2 = document.createElement('td');
+    var downloadBtn2 = document.createElement('button');
+    downloadBtn2.className = 'download-btn download-btn2';
+    downloadBtn2.textContent = '下载';
+    downloadBtn2.dataset.id = item.id;
+    downloadBtn2.dataset.pwd = item.pwd;
+    downloadBtn2.dataset.key = item.key;
+    downloadBtn2.onclick = function(){
+      if(this.dataset.key != ''){
+        var url = "https://www.123pan.com/s/zbPhTd-"+this.dataset.key+".html";
+        ajax_download('123yun.php?url=' + url);
+      }else if(this.dataset.id != ''){
+        ajax_download('lanzouyun.php?id=' + this.dataset.id + '&pwd=' + this.dataset.pwd);
+      }else{
+        alert('下载出错！');
+      }
+    }
+    tdDownload2.appendChild(downloadBtn2);
 
     tr.appendChild(tdIndex);
     tr.appendChild(tdName);
     tr.appendChild(tdDownload);
+    tr.appendChild(tdDownload2);
     tableBody.appendChild(tr);
+  }
+
+  //请求
+  function ajax_download(url)
+  {
+    // 创建XMLHttpRequest对象
+    var xhr = new XMLHttpRequest();
+    // 设置请求方法和URL
+    xhr.open('GET', 'http://zhidu888.top:88/'+url, true);       
+    // 处理响应
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // 请求成功，处理响应数据
+        var data = JSON.parse(xhr.response);
+        if(data.code == 0){
+          alert(data.msg);
+          return false;
+        }
+        download_apk(data.data, data.blank);
+      } else {
+        // 请求失败，处理错误信息
+        alert('请求失败：' + xhr.statusText);
+      }
+    };
+    
+    // 发送请求
+    xhr.send();
   }
 
   //apk下载
